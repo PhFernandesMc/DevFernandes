@@ -3,7 +3,13 @@
 
 @custom-variant dark (&:is(.dark *));
 
+.fonteSecundaria {
+  font-family: "Inter", sans-serif;
+}
+
 @theme inline {
+  --color-main: #234F49;
+  --color-second: #CBA255;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -42,6 +48,7 @@
 }
 
 :root {
+  font-family: "Poppins", sans-serif;
   --radius: 0.65rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
