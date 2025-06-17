@@ -8,6 +8,7 @@
 }
 
 @theme inline {
+  --color-main-lighter: #54c4b5;
   --color-main: #234F49;
   --color-second: #CBA255;
   --radius-sm: calc(var(--radius) - 4px);

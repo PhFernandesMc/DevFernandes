@@ -1,30 +1,33 @@
 import type { headerBtnType } from "@/types/buttonTypes";
-import {useState } from "react";
-import { Button } from "../ui/button";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const [btnAtivo, setBtnAtivo] = useState<string>("");
 
+  useEffect(() => {
+    console.log(btnAtivo);
+  }, [btnAtivo]);
+
   const btns: headerBtnType[] = [
     {
       texto: "Sobre min",
-      status: "sobre",
+      status: "about",
     },
     {
       texto: "Projetos",
-      status: "projetos",
+      status: "projects",
     },
     {
       texto: "Experiência",
-      status: "experiencia",
+      status: "expirience",
     },
     {
       texto: "Educação",
-      status: "educacao",
+      status: "education",
     },
     {
       texto: "Contato",
-      status: "contato",
+      status: "contact",
     },
   ];
 
@@ -41,14 +44,12 @@ const Header = () => {
               {btns.map((btn, index) => (
                 <li
                   key={index}
-                  className={`hover:text-main hover:cursor-pointer ${
-                    btnAtivo === btn.status ? "text-main" : ""
-                  }`}
+                  className={`text-main hover:text-main-lighter hover:cursor-pointer border-b-1 border-black/10 ${
+                    btnAtivo === btn.status ? "text-main-lighter border-b-1 border-main-lighter" : ""
+                  } transition-all ease-in duration-300`}
                   onClick={() => setBtnAtivo(btn.status)}
                 >
-                  <Button className="bg-main text-second font-medium">
-                    {btn.texto}
-                    </Button>
+                  <p>{btn.texto}</p>
                 </li>
               ))}
             </ul>
